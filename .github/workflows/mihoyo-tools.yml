@@ -2,12 +2,12 @@ name: MihoyoTools
 
 on:
   schedule:
-    - cron: '0 9 * * *'
+    - cron: '00 00 * * *'
   workflow_dispatch:
 
 jobs:
   run:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest·
     environment: production
 
     env:
