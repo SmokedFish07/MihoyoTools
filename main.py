@@ -26,9 +26,9 @@ class StatusCode(Enum):
 
 
 def check_github_actions() -> None:
-    """检查是否在GitHub Actions环境运行"""
-    if os.getenv('GITHUB_ACTIONS') == 'true':
-        log.error("请不要在 GitHub Action 运行本项目")
+    """检查是否在 GitHub Actions 环境运行。"""
+    if os.getenv('GITHUB_ACTIONS') == 'true' and os.getenv('ALLOW_GITHUB_ACTIONS') != 'true':
+        log.error("默认禁止在 GitHub Actions 中运行本项目。若确需运行，请设置 ALLOW_GITHUB_ACTIONS=true")
         exit(0)
 
 
