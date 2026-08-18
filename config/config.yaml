@@ -6,7 +6,7 @@ version: 15
 push: ""
 account:
   #登入账号只需要修改cookie就行了
-  cookie: "DEVICEFP=38d81b833c37c; _MHYUUID=5d8c3944-dde1-40b5-bab8-20aed6b1fa59; aliyungf_tc=2436b054bbc05b41a2b29dfc0323742e10df62cc63639003ba6f4c7d5e87ab71; DEVICEFP_SEED_ID=2ad008b74e583f2e; DEVICEFP_SEED_TIME=1787036805127; MIHOYO_LOGIN_PLATFORM_LIFECYCLE_ID=c60e780292; cookie_token_v2=v2_HlzZCPhptQHQRWOAt-ZTERFjXVaqX42XHE5ASgqX3AoWFFLQq4lmcRCi0cIcVt_8VNW9ZWcxmBruQVCBRbB1EScpHnZe3H80uVOFSaE5bqdnySvez2fDqrfZppywwgiTESjxJ-eYD1wDoNbr3Q==.CAE=; account_mid_v2=0yjmvvpj0q_mhy; account_id_v2=82732952; ltoken_v2=v2_Wwx9FdumvmCwzOrEMccE9TiVkm-5lAz1u2gOeqtsgQ1lVs76vcXS38d4wQ0lUHEBthQYAtBOiJJsM4VxJ-xRuEZjBVtKohHFjsI75kqsJV3vK0evwEW_wEHlZ_GC0ODqCIf7AfRoCcEfSsJOykc=.CAE=; ltmid_v2=0yjmvvpj0q_mhy; ltuid_v2=82732952; account_id=82732952; ltuid=82732952"
+  cookie: ""
   stuid: ""
   stoken: ""
   mid: ""
