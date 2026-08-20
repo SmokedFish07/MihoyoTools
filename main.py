@@ -143,6 +143,7 @@ def main() -> Tuple[int, str]:
 def task_run() -> None:
     """任务运行入口"""
 
+    message = "任务执行过程中发生异常"
     try:
         status_code, message = main()
         push_message = message
@@ -156,6 +157,14 @@ def task_run() -> None:
         log.error("账号 Stoken 有问题！")
 
     push.push(status_code, push_message)
+
+    if os.getenv("SEND_MESSAGE_ENABLED") == "true":
+        from send_message import send_sign_report
+
+        send_sign_report(
+            status=str(status_code),
+            message=push_message,
+        )
 
 
 if __name__ == "__main__":

@@ -13,6 +13,11 @@ jobs:
     env:
       GITHUB_ACTIONS: 'true'
       ALLOW_GITHUB_ACTIONS: 'true'
+      SEND_MESSAGE_ENABLED: 'true'
+      APP_ID: ${{ secrets.APP_ID }}
+      APP_SECRET: ${{ secrets.APP_SECRET }}
+      OPEN_ID: ${{ secrets.OPEN_ID }}
+      MESSAGE_ID: ${{ secrets.MESSAGE_ID }}
 
     steps:
       - name: Checkout repository
