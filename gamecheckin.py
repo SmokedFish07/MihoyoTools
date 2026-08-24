@@ -158,14 +158,14 @@ class GameCheckin:
                 if req.status_code != 429:
                     data = req.json()
                     if data["retcode"] == 0 and data["data"]["success"] == 0:
-                        result_message = (f"{self.player_name}「{account[0]}」签到成功~\r\n"
-                                          f"今天获得的奖励是{tools.get_item(self.checkin_rewards[0 if sign_days == 0 else sign_days + 1])}")
+                        result_message = (f"{self.player_name}「{account[0]}」签到成功\r\n"
+                                          f"奖励{tools.get_item(self.checkin_rewards[0 if sign_days == 0 else sign_days + 1])}")
                         log.info(result_message)
                         return_data += f"\n{result_message}"
                         sign_days += 2
                     elif data["retcode"] == -5003:
-                        result_message = (f"{self.player_name}{account[0]}今天已经签到过了~\r\n"
-                                          f"今天获得的奖励是{tools.get_item(self.checkin_rewards[sign_days])}")
+                        result_message = (f"{self.player_name}{account[0]}已签到\r\n"
+                                          f"奖励{tools.get_item(self.checkin_rewards[sign_days])}")
                         log.info(result_message)
                         return_data += f"\n{result_message}"
                     else:
