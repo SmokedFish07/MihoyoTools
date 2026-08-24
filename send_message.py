@@ -58,6 +58,8 @@ def send_sign_success(access_token, status, message):
 
 def send_sign_report(status="签到完成", message=""):
     # 1.获取access_token
+    if not message.strip():
+        raise ValueError("签到消息为空，请从 main.py 调用 send_sign_report 并传入 message")
     access_token = get_access_token()
     if not access_token:
         raise RuntimeError("获取微信 access_token 失败")

@@ -162,7 +162,12 @@ def task_run() -> None:
         from send_message import send_sign_report
 
         send_sign_report(
-            status=str(status_code),
+            status={
+                StatusCode.SUCCESS.value: "签到成功",
+                StatusCode.FAILURE.value: "签到失败",
+                StatusCode.PARTIAL_FAILURE.value: "部分成功",
+                StatusCode.CAPTCHA_TRIGGERED.value: "触发验证码",
+            }.get(status_code, "签到完成"),
             message=push_message,
         )
 
