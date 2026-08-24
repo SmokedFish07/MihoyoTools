@@ -44,7 +44,7 @@ def send_sign_success(access_token, status, message):
             "status": {  # 模板中的变量名
                 "value": status
             },
-            "remark": {  # 模板中的变量名
+            "msg": {  # 模板中的变量名
                 "value": message
             }
         }
