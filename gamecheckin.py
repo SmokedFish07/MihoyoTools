@@ -143,8 +143,8 @@ class GameCheckin:
                 continue
             sign_days = is_data["total_sign_day"] - 1
             if is_data["is_sign"]:
-                result_message = (f"{self.player_name}「{account[0]}」今天已经签到过了~\r\n"
-                                  f"今天获得的奖励是{tools.get_item(self.checkin_rewards[sign_days])}")
+                result_message = (f"{self.player_name}「{account[0]}」已签到\r\n"
+                                  f"奖励{tools.get_item(self.checkin_rewards[sign_days])}")
                 log.info(result_message)
                 return_data += f"\n{result_message}"
                 sign_days += 1
