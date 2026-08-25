@@ -1,6 +1,7 @@
 # 安装依赖 pip3 install requests html5lib bs4 schedule
 import os
 import requests
+import json
 
 # 从测试号信息获取
 appID = os.environ.get("APP_ID")
@@ -32,6 +33,7 @@ def send_sign_success(access_token, status, message):
     import datetime
     now = datetime.datetime.now()
     time_str = now.strftime("%Y年%m月%d日 %H:%M:%S")
+    message = " ".join(message.split())
 
     body = {
         "touser": openId.strip(),
@@ -49,10 +51,15 @@ def send_sign_success(access_token, status, message):
             }
         }
     }
+    print(f"微信消息 msg 长度: {len(message)}")
+    print(f"微信消息 msg 内容: {message!r}")
     url = 'https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={}'.format(access_token)
-    response = requests.post(url, json=body, timeout=30)
+    response = requests.post(url, data=json.dumps(body, ensure_ascii=False), timeout=30)
     response.raise_for_status()
-    print(response.text)
+    result = response.json()
+    print(f"微信接口响应: {result}")
+    if result.get("errcode") != 0:
+        raise RuntimeError(f"微信模板消息发送失败：{result}")
 
 
 
